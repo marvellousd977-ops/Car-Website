@@ -1,0 +1,673 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff;
+color:#222;
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+img{
+width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+}
+
+ul{
+list-style:none;
+}
+
+/* HEADER */
+
+header{
+background:#111;
+padding:20px 0;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+header .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo h2{
+color:#fff;
+font-weight:700;
+}
+
+.logo span{
+color:#e41e26;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+}
+
+nav a{
+color:#fff;
+transition:.3s;
+}
+
+nav a:hover{
+color:#e41e26;
+}
+
+.header-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.header-right p{
+color:#fff;
+font-size:14px;
+}
+
+.btn{
+    background:#e41e26;
+    color:#fff;
+    border-radius:15px;
+    font-size:18px;
+    cursor:pointer;
+    padding:18px 45px;
+    border:none;
+    transition:.3s;
+/* padding:12px 25px;
+border-radius:5px; */
+
+}
+
+.btn:hover{
+background:#b9151d;
+}
+
+/* HERO */
+
+.hero{
+height:650px;
+background:url('../images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover;
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.hero-text{
+width:50%;
+color:#fff;
+}
+
+.hero-text h1{
+font-size:65px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero-text span{
+color:#ff2f2f;
+}
+
+.hero-text p{
+font-size:18px;
+margin-bottom:30px;
+max-width:500px;
+}
+
+.buttons{
+ margin-top:40px;
+}
+
+.btn-outline{
+    background-color: black;
+    color:#fff;
+    margin-left:20px;
+    border-radius:15px;
+    font-size:18px;
+    cursor:pointer;
+    padding:18px 45px;
+    border:none;
+    transition:.3s;
+}
+
+.btn-outline:hover{
+background:#2d2a2a;
+color:#f5f2f2;
+}
+
+.hero-image{
+width:100%;
+background-size: cover;
+display: block;
+}
+
+/* SEARCH */
+
+.search-box{
+margin-top:-50px;
+position:relative;
+z-index:10;
+}
+
+.search-box form{
+background:#fff;
+padding:25px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.search-box select,
+.search-box button{
+height:50px;
+border:1px solid #ddd;
+padding:0 15px;
+border-radius:5px;
+}
+
+.search-box button{
+background:#e41e26;
+color:#fff;
+border:none;
+cursor:pointer;
+}
+
+/* FEATURED */
+
+.featured{
+padding:80px 0;
+}
+
+.featured h2{
+text-align:center;
+font-size:40px;
+margin-bottom:10px;
+}
+
+.featured p{
+text-align:center;
+color:#777;
+margin-bottom:50px;
+}
+
+.cars{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+background-color: whitesmoke;
+}
+
+.card{
+background:#fff;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+height:220px;
+object-fit:contain;
+}
+
+.card h3{
+padding:20px 20px 5px;
+color: white;
+}
+
+.price{
+display:block;
+padding:0 20px;
+color:#e41e26;
+font-size:24px;
+font-weight:700;
+}
+
+.card ul{
+padding:20px;
+display:flex;
+justify-content:space-between;
+font-size:14px;
+color:#fffefe;
+}
+
+.card a{
+display:block;
+margin:20px;
+text-align:center;
+background:#111;
+color:#fff;
+padding:12px;
+border-radius:5px;
+}
+
+
+/* jvuoiy */
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    font-weight:bold;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:70px;
+    height:4px;
+    background:#e41d24;
+    display:block;
+    margin:15px auto;
+}
+
+/* ===========================
+   WHY CHOOSE US
+=========================== */
+
+.why-us{
+    background:#111;
+    color:#fff;
+    padding:80px 8%;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1d1d1d;
+    text-align:center;
+    padding:35px 20px;
+    border-radius:10px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card i{
+    font-size:45px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#bbb;
+    font-size:15px;
+}
+
+/* ===========================
+   BRANDS
+=========================== */
+
+.brands{
+    padding:80px 8%;
+    background:#fff;
+}
+
+.brand-logos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:45px;
+    flex-wrap:wrap;
+}
+
+.brand-logos img{
+    width:90px;
+    transition:.3s;
+}
+
+.brand-logos img:hover{
+    transform:scale(1.1);
+}
+
+/* ===========================
+   SPECIAL OFFER
+=========================== */
+
+.offer{
+    background:#111;
+    color:#fff;
+    padding:70px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.offer-text{
+    flex:1;
+}
+
+.offer-text span{
+    color:#ff3333;
+    text-transform:uppercase;
+}
+
+.offer-text h2{
+    font-size:45px;
+    margin:10px 0 20px;
+}
+
+.offer-text p{
+    margin-bottom:10px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#e41d24;
+    color:#fff;
+    padding:14px 30px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c1151a;
+}
+
+.offer-image{
+    flex:1;
+}
+
+/* ===========================
+   TESTIMONIALS
+=========================== */
+
+.testimonial{
+    padding:80px 8%;
+}
+
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.review{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.review p{
+    margin-bottom:20px;
+}
+
+.stars{
+    color:gold;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.user img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact{
+    background:#111;
+    color:#fff;
+    padding:80px 8%;
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    gap:30px;
+}
+
+.contact-info p{
+    margin:20px 0;
+}
+
+.contact-info i{
+    color:#e41d24;
+    margin-right:10px;
+}
+
+.contact-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.contact-form textarea{
+    grid-column:1/3;
+    height:150px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    background:#1d1d1d;
+    border:none;
+    color:#fff;
+    padding:15px;
+    outline:none;
+}
+
+.contact-form button{
+    grid-column:1/3;
+    background:#e41d24;
+    color:#fff;
+    border:none;
+    padding:15px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.contact-form button:hover{
+    background:#c1151a;
+}
+
+.map img{
+    width:100%;
+    border-radius:8px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#0b0b0b;
+    color:#fff;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+    padding:70px 8%;
+}
+
+.footer-container h2,
+.footer-container h3{
+    margin-bottom:20px;
+}
+
+.footer-container p{
+    color:#bbb;
+}
+
+.footer-container ul li{
+    margin-bottom:12px;
+}
+
+.footer-container ul li a{
+    color:#bbb;
+}
+
+.footer-container ul li a:hover{
+    color:#fff;
+}
+
+.footer-container input{
+    width:100%;
+    padding:12px;
+    margin:15px 0;
+    background:#222;
+    border:none;
+    color:#fff;
+}
+
+.footer-container button{
+    background:#e41d24;
+    color:#fff;
+    border:none;
+    padding:12px 25px;
+    cursor:pointer;
+}
+
+.footer-container button:hover{
+    background:#c1151a;
+}
+
+.social{
+    margin-top:20px;
+}
+
+.social i{
+    width:40px;
+    height:40px;
+    background:#222;
+    text-align:center;
+    line-height:40px;
+    border-radius:50%;
+    margin-right:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.social i:hover{
+    background:#e41d24;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #222;
+    padding:20px;
+    color:#aaa;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:991px){
+
+.offer{
+    flex-direction:column;
+    text-align:center;
+}
+
+.contact{
+    grid-template-columns:1fr;
+}
+
+.contact-form{
+    grid-template-columns:1fr;
+}
+
+.contact-form textarea,
+.contact-form button{
+    grid-column:1;
+}
+
+}
+
+@media(max-width:768px){
+
+.section-title{
+    font-size:28px;
+}
+
+.offer-text h2{
+    font-size:32px;
+}
+
+.brand-logos{
+    gap:25px;
+}
+
+.brand-logos img{
+    width:70px;
+}
+
+}
