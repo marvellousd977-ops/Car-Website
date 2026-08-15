@@ -671,3 +671,55 @@ footer{
 }
 
 }
+
+/* moblie */
+@media(max-width:768px){
+
+header .container{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.header-right{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.hero{
+    height:auto;
+    padding:60px 0;
+}
+
+.hero-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-text{
+    width:100%;
+}
+
+.hero-text h1{
+    font-size:32px;
+}
+
+.search-box form{
+    grid-template-columns:1fr;
+}
+
+.cars{
+    grid-template-columns:1fr;
+}
+
+.card img{
+    height:auto;
+}
+
+}
