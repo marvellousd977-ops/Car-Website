@@ -17,6 +17,10 @@ max-width:1200px;
 margin:auto;
 }
 
+button{
+font-family: inherit;
+}
+
 img{
 width:100%;
 display:block;
@@ -282,9 +286,256 @@ border-radius:5px;
 
 /* jvuoiy */
 /* ===========================
-   GLOBAL STYLES
+   CARS INVENTORY PAGE
 =========================== */
 
+.inventory-page{
+    background: #f6f6f6;
+}
+
+.inventory-hero{
+    background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(17,17,17,0.75)),
+        url('../images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover no-repeat;
+    padding: 90px 0 70px;
+}
+
+.inventory-hero-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.hero-copy{
+    max-width: 680px;
+    color: #fff;
+}
+
+.eyebrow{
+    display: inline-block;
+    background: rgba(228, 30, 38, 0.16);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #ffb0b4;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-copy h1{
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.hero-copy h1 span{
+    color: #ff3b3b;
+}
+
+.hero-copy p{
+    color: rgba(255,255,255,0.8);
+    font-size: 1.05rem;
+    max-width: 560px;
+}
+
+.filter-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.filter-tag{
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+}
+
+.filter-tag.active{
+    background: #e41e26;
+    border-color: #e41e26;
+}
+
+.hero-panel{
+    display: grid;
+    gap: 18px;
+    width: min(100%, 280px);
+}
+
+.stat-box{
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 22px 20px;
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+.stat-box strong{
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.stat-box span{
+    color: rgba(255,255,255,0.75);
+    font-size: 0.9rem;
+}
+
+.car-catalog{
+    padding: 90px 0;
+}
+
+.section-heading{
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2{
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 12px;
+}
+
+.section-heading p{
+    color: #666;
+    font-size: 1rem;
+}
+
+.car-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.inventory-card{
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inventory-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.image-wrap img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body{
+    padding: 20px 18px 18px;
+}
+
+.title-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.title-row h3{
+    font-size: 1.5rem;
+    color: #111;
+}
+
+.price{
+    color: #e41e26;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.model{
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.tag-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.tag{
+    display: inline-block;
+    background: #f3f3f3;
+    color: #333;
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.specs{
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    color: #444;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.specs li{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.specs i{
+    color: #e41e26;
+}
+
+.cta-row{
+    display: flex;
+    gap: 10px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.primary-btn{
+    background: #111;
+    color: #fff;
+    flex: 1;
+    text-decoration: none;
+}
+
+.primary-btn:hover{
+    background: #e41e26;
+}
+
+.secondary-btn{
+    background: #f1f1f1;
+    color: #111;
+    flex: 1;
+}
+
+.secondary-btn:hover{
+    background: #e41e26;
+    color: #fff;
+}
 
 img{
     max-width:100%;
