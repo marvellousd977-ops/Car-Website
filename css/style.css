@@ -354,6 +354,14 @@ border-radius:5px;
     padding: 10px 16px;
     border-radius: 999px;
     font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.filter-tag:hover{
+    background: rgba(228, 30, 38, 0.3);
+    border-color: #e41e26;
 }
 
 .filter-tag.active{
@@ -417,7 +425,8 @@ border-radius:5px;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
 }
 
 .inventory-card:hover{
@@ -442,6 +451,7 @@ border-radius:5px;
     justify-content: space-between;
     gap: 12px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 
 .title-row h3{
@@ -451,8 +461,10 @@ border-radius:5px;
 
 .price{
     color: #e41e26;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
+    white-space: nowrap;
+    word-break: break-word;
 }
 
 .model{

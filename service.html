@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Marvellous Drive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* SERVICE PAGE STYLES */
+        .service-page {
+            background: #f6f6f6;
+        }
+
+        .service-hero {
+            background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(17,17,17,0.75)),
+                url('images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover no-repeat;
+            padding: 120px 0 80px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .service-hero h1 span {
+            color: #ff3b3b;
+        }
+
+        .service-hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* SECTION STYLES */
+        .service-section {
+            padding: 90px 0;
+        }
+
+        .service-section.light {
+            background: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3vw, 3rem);
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .section-header span {
+            color: #e41e26;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 5px solid #e41e26;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            color: #e41e26;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .service-features li {
+            color: #555;
+            font-size: 0.9rem;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #e41e26;
+            font-weight: 700;
+        }
+
+        .service-card .btn-service {
+            display: inline-block;
+            background: #e41e26;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .service-card .btn-service:hover {
+            background: #b4151b;
+            transform: translateY(-3px);
+        }
+
+        /* PROCESS SECTION */
+        .process-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .process-step {
+            position: relative;
+            text-align: center;
+        }
+
+        .process-step .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e41e26, #b4151b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 800;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 25px rgba(228, 30, 38, 0.3);
+        }
+
+        .process-step h4 {
+            font-size: 1.2rem;
+            color: #111;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* PRICING SECTION */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #e41e26;
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, #e41e26, #b4151b);
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        .pricing-content {
+            padding: 30px;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #e41e26;
+            margin-bottom: 10px;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.5rem;
+        }
+
+        .pricing-price .period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .pricing-features li {
+            color: #555;
+            padding: 12px 0;
+            border-bottom: 1px solid #f3f3f3;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: #e41e26;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 15px;
+            background: #e41e26;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+        }
+
+        .pricing-btn:hover {
+            background: #b4151b;
+            transform: translateY(-3px);
+        }
+
+        /* WHY CHOOSE US */
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .why-card .icon {
+            font-size: 3rem;
+            color: #e41e26;
+            margin-bottom: 20px;
+        }
+
+        .why-card h4 {
+            font-size: 1.2rem;
+            color: #111;
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CTA SECTION */
+        .service-cta {
+            background: linear-gradient(135deg, rgba(228, 30, 38, 0.95), rgba(180, 21, 27, 0.95));
+            color: #fff;
+            text-align: center;
+            padding: 80px 30px;
+            border-radius: 20px;
+            margin: 60px 0 0;
+        }
+
+        .service-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn.primary {
+            background: #fff;
+            color: #e41e26;
+        }
+
+        .cta-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #fff;
+            color: #e41e26;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid #e41e26;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #111;
+        }
+
+        .testimonial-role {
+            color: #e41e26;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .service-section {
+                padding: 60px 0;
+            }
+
+            .service-hero {
+                padding: 80px 0 60px;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .why-choose-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .service-cta {
+                padding: 60px 20px;
+            }
+
+            .service-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .pricing-price {
+                font-size: 2rem;
+            }
+
+            .process-step .step-number {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2><span>MARVELLOUS</span> DRIVE</h2>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="car.html">Home</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <p><i class="fa-solid fa-phone"></i> +234 7058470957</p>
+                <a href="#" class="btn">Book Test Drive</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="service-page">
+        <!-- Hero Section -->
+        <section class="service-hero">
+            <div class="container">
+                <h1>Our <span>Services</span></h1>
+                <p>Complete automotive solutions designed to keep your vehicle running smoothly and looking stunning</p>
+            </div>
+        </section>
+
+        <!-- Main Services Section -->
+        <section class="service-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Premium <span>Automotive Services</span></h2>
+                    <p>Everything your vehicle needs, all in one place</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1: Sales & Financing -->
+                    <div class="service-card">
+                        <span class="icon"><i class="fa-solid fa-handshake"></i></span>
+                        <h3>Sales & Financing</h3>
+                        <p>Discover your perfect vehicle from our curated collection of premium cars with flexible financing options</p>
+                        <ul class="service-features">
+                            <li>Wide selection of luxury vehicles</li>
+                            <li>Flexible payment plans</li>
+                            <li>Trade-in services available</li>
+                            <li>Expert guidance throughout</li>
+                        </ul>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+
+                    <!-- Service 2: Maintenance & Servicing -->
+                    <div class="service-card">
+                        <span class="icon"><i class="fa-solid fa-wrench"></i></span>
+                        <h3>Maintenance & Servicing</h3>
+                        <p>Regular maintenance to ensure your vehicle performs at its best and maintains optimal value</p>
+                        <ul class="service-features">
+                            <li>Oil and filter changes</li>
+                            <li>Fluid checks and top-ups</li>
+                            <li>Brake inspections</li>
+                            <li>Battery testing</li>
+                        </ul>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+
+                    <!-- Service 3: Repairs -->
+                    <div class="service-card">
+                        <span class="icon"><i class="fa-solid fa-tools"></i></span>
+                        <h3>General Repairs</h3>
+                        <p>Expert repairs using genuine parts and latest technology to restore your vehicle to perfect condition</p>
+                        <ul class="service-features">
+                            <li>Engine repairs</li>
+                            <li>Transmission service</li>
+                            <li>Suspension & steering</li>
+                            <li>Diagnostic services</li>
+                        </ul>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+
+                    <!-- Service 4: Detailing & Maintenance -->
+                    <div class="service-card">
+                        <span class="icon"><i class="fa-solid fa-sparkles"></i></span>
+                        <h3>Detailing & Cleaning</h3>
+                        <p>Professional detailing services to keep your car looking showroom fresh inside and out</p>
+                        <ul class="service-features">
+                            <li>Exterior washing & waxing</li>
+                            <li>Interior deep cleaning</li>
+                            <li>Paint protection coating</li>
+                            <li>Upholstery restoration</li>
+                        </ul>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+
+                    <!-- Service 5: Tire Services -->
+                    <div class="service-card">
+                        <span class="icon"><i class="fa-solid fa-circle"></i></span>
+                        <h3>Tire Services</h3>
+                        <p>Complete tire solutions including sales, installation, rotation, and alignment services</p>
+                        <ul class="service-features">
+                            <li>Tire sales & installation</li>
+                            <li>Rotation & balancing</li>
+                            <li>Wheel alignment</li>
+                            <li>Flat tire repairs</li>
+                        </ul>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+
+                    <!-- Service 6: Inspection & Certification -->
+                    <div class="service-card">
+                        <span class="icon"><i class="fa-solid fa-certificate"></i></span>
+                        <h3>Inspection & Certification</h3>
+                        <p>Comprehensive vehicle inspections and certifications to ensure quality and safety standards</p>
+                        <ul class="service-features">
+                            <li>Pre-purchase inspections</li>
+                            <li>Safety inspections</li>
+                            <li>Emission testing</li>
+                            <li>Certification reports</li>
+                        </ul>
+                        <button class="btn-service">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work Section -->
+        <section class="service-section light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Service <span>Process</span></h2>
+                    <p>Simple, transparent, and customer-focused approach</p>
+                </div>
+
+                <div class="process-container">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Book an Appointment</h4>
+                        <p>Contact us or book online for your preferred service. We ensure minimal wait time and professional handling.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Vehicle Assessment</h4>
+                        <p>Our experts thoroughly inspect your vehicle to identify all service needs and provide transparent recommendations.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Service Execution</h4>
+                        <p>We use genuine parts and latest technology to deliver high-quality service with precision and expertise.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Quality Assurance</h4>
+                        <p>Every service is tested and verified to ensure it meets our strict quality standards and your expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="service-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Service <span>Packages</span></h2>
+                    <p>Flexible pricing options for every need and budget</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Basic Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Basic Care</h3>
+                            <p>Essential services</p>
+                        </div>
+                        <div class="pricing-content">
+                            <div class="pricing-price">
+                                <span class="currency">₦</span>25,000<span class="period">/service</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li>Oil & filter change</li>
+                                <li>Fluid checks</li>
+                                <li>Battery inspection</li>
+                                <li>Basic diagnostics</li>
+                                <li>1-year warranty</li>
+                            </ul>
+                            <button class="pricing-btn">Select Package</button>
+                        </div>
+                    </div>
+
+                    <!-- Premium Package (Featured) -->
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h3>Premium Plus</h3>
+                            <p style="margin-bottom: 0;">Most Popular</p>
+                            <span class="badge">BEST VALUE</span>
+                        </div>
+                        <div class="pricing-content">
+                            <div class="pricing-price">
+                                <span class="currency">₦</span>65,000<span class="period">/service</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li>All Basic Care services</li>
+                                <li>Full system inspection</li>
+                                <li>Brake inspection</li>
+                                <li>Tire rotation & balance</li>
+                                <li>Wheel alignment check</li>
+                                <li>2-year warranty</li>
+                                <li>Priority support</li>
+                            </ul>
+                            <button class="pricing-btn">Select Package</button>
+                        </div>
+                    </div>
+
+                    <!-- Elite Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Elite Care</h3>
+                            <p>Comprehensive coverage</p>
+                        </div>
+                        <div class="pricing-content">
+                            <div class="pricing-price">
+                                <span class="currency">₦</span>120,000<span class="period">/service</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li>All Premium Plus services</li>
+                                <li>Interior detailing</li>
+                                <li>Exterior waxing</li>
+                                <li>Paint protection</li>
+                                <li>Transmission fluid check</li>
+                                <li>3-year warranty</li>
+                                <li>24/7 roadside assistance</li>
+                            </ul>
+                            <button class="pricing-btn">Select Package</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="service-section light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose <span>Marvellous Drive</span> Services?</h2>
+                    <p>Excellence in every service we provide</p>
+                </div>
+
+                <div class="why-choose-grid">
+                    <div class="why-card">
+                        <span class="icon"><i class="fa-solid fa-star"></i></span>
+                        <h4>Expert Technicians</h4>
+                        <p>Certified professionals with years of experience in automotive service and maintenance</p>
+                    </div>
+
+                    <div class="why-card">
+                        <span class="icon"><i class="fa-solid fa-clock"></i></span>
+                        <h4>Quick Turnaround</h4>
+                        <p>Efficient service delivery without compromising on quality standards</p>
+                    </div>
+
+                    <div class="why-card">
+                        <span class="icon"><i class="fa-solid fa-shield"></i></span>
+                        <h4>Quality Guarantee</h4>
+                        <p>All work backed by comprehensive warranty and 100% satisfaction guarantee</p>
+                    </div>
+
+                    <div class="why-card">
+                        <span class="icon"><i class="fa-solid fa-toolbox"></i></span>
+                        <h4>Genuine Parts</h4>
+                        <p>Only authentic OEM parts used to ensure compatibility and durability</p>
+                    </div>
+
+                    <div class="why-card">
+                        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                        <h4>24/7 Support</h4>
+                        <p>Round-the-clock customer support for all your service inquiries and emergencies</p>
+                    </div>
+
+                    <div class="why-card">
+                        <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                        <h4>Competitive Pricing</h4>
+                        <p>Best rates in the market with transparent pricing and no hidden charges</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="service-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Customer <span>Testimonials</span></h2>
+                    <p>What our satisfied customers say about our services</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Excellent service! The team was professional, courteous, and got my car fixed quickly. Highly recommended!"</p>
+                        <p class="testimonial-author">Chidi Okoro</p>
+                        <p class="testimonial-role">Satisfied Customer</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Best car maintenance service in Lagos! The prices are fair and the work is top-notch. Keep it up!"</p>
+                        <p class="testimonial-author">Fatima Hassan</p>
+                        <p class="testimonial-role">Regular Client</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I trust Marvellous Drive with my luxury car. Their attention to detail and expertise is unmatched!"</p>
+                        <p class="testimonial-author">Emeka Nwankwo</p>
+                        <p class="testimonial-role">Premium Member</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="service-section">
+            <div class="container">
+                <div class="service-cta">
+                    <h2>Ready for Premium Service?</h2>
+                    <p>Schedule your appointment today and experience the Marvellous Drive difference!</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-btn primary">Book Service Now</a>
+                        <a href="#" class="cta-btn secondary">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #111; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Marvellous Drive. All rights reserved. | Designed with <i class="fa-solid fa-heart" style="color: #e41e26;"></i> by Our Team</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to top when Services button is clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceLinks = document.querySelectorAll('a[href="service.html"]');
+            
+            serviceLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // If we're already on the service page, scroll to top
+                    if (window.location.pathname.includes('service.html')) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

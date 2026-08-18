@@ -18,6 +18,13 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+<style>
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
 </head>
 
 <body>
@@ -40,13 +47,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <li><a href="cars.html">Cars</a></li>
 
-<li><a href="#">About</a></li>
+<li><a href="about.html">About</a></li>
 
-<li><a href="#">Services</a></li>
+<li><a href="service.html">Services</a></li>
 
-<li><a href="#">Blog</a></li>
+<li><a href="blog.html">Blog</a></li>
 
-<li><a href="#">Contact</a></li>
+<li><a href="contact.html">Contact</a></li>
 
 </ul>
 
@@ -370,6 +377,27 @@ Your one-stop destination for quality vehicles.
 </div>
 
 </footer>
+
+<script>
+    // Scroll to top when Home button is clicked
+    document.addEventListener('DOMContentLoaded', function() {
+        const homeLinks = document.querySelectorAll('a[href="#"], a[href="car.html"], nav a:first-child');
+        
+        homeLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // If we're on the home page and it's the Home link, scroll to top
+                if ((window.location.pathname.includes('car.html') || window.location.pathname.endsWith('/')) && 
+                    (this.getAttribute('href') === '#' || this.getAttribute('href') === 'car.html' || this.textContent.trim() === 'Home')) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

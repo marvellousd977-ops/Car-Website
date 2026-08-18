@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Marvellous Drive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ABOUT PAGE STYLES */
+        .about-page {
+            background: #f6f6f6;
+        }
+
+        .about-hero {
+            background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(17,17,17,0.75)),
+                url('images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover no-repeat;
+            padding: 120px 0 80px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .about-hero h1 span {
+            color: #ff3b3b;
+        }
+
+        .about-hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ABOUT CONTENT SECTIONS */
+        .about-section {
+            padding: 90px 0;
+        }
+
+        .about-section.alternate {
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 3vw, 3rem);
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #e41e26;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ABOUT CONTENT LAYOUT */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content.reverse {
+            direction: rtl;
+        }
+
+        .about-content.reverse > * {
+            direction: ltr;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #111;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .about-text li {
+            color: #555;
+            font-size: 1rem;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .about-text li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #e41e26;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* STATS SECTION */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 0;
+        }
+
+        .stat-item {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #e41e26;
+            margin-bottom: 12px;
+        }
+
+        .stat-item .label {
+            font-size: 1.1rem;
+            color: #111;
+            font-weight: 600;
+        }
+
+        .stat-item .description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        /* VALUES SECTION */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid #e41e26;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-card .icon {
+            font-size: 3rem;
+            color: #e41e26;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* TEAM SECTION */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e41e26, #b4151b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #fff;
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-info h4 {
+            font-size: 1.2rem;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .member-info p {
+            color: #e41e26;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .member-info .description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .member-socials {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .member-socials a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f3f3f3;
+            color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .member-socials a:hover {
+            background: #e41e26;
+            color: #fff;
+        }
+
+        /* CTA SECTION */
+        .about-cta {
+            background: linear-gradient(135deg, rgba(228, 30, 38, 0.95), rgba(180, 21, 27, 0.95));
+            color: #fff;
+            text-align: center;
+            padding: 80px 30px;
+            border-radius: 20px;
+            margin: 60px 0 0;
+        }
+
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn.primary {
+            background: #fff;
+            color: #e41e26;
+        }
+
+        .cta-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #fff;
+            color: #e41e26;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-content.reverse {
+                direction: ltr;
+            }
+
+            .about-image img {
+                height: 300px;
+            }
+
+            .about-section {
+                padding: 60px 0;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero {
+                padding: 80px 0 60px;
+            }
+
+            .about-cta {
+                padding: 60px 20px;
+            }
+
+            .about-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item .number {
+                font-size: 2.2rem;
+            }
+
+            .about-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2><span>MARVELLOUS</span> DRIVE</h2>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="car.html">Home</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <p><i class="fa-solid fa-phone"></i> +234 7058470957</p>
+                <a href="#" class="btn">Book Test Drive</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <h1>About <span>Marvellous Drive</span></h1>
+                <p>Your trusted partner in finding the perfect vehicle with excellence, integrity, and customer satisfaction at every step.</p>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="about-section alternate">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Our Story</h3>
+                        <p>Founded in 2015, Marvellous Drive has established itself as a leading automotive dealership in Nigeria. What started as a small showroom with a vision to revolutionize car buying has grown into a trusted destination for premium vehicles.</p>
+                        <p>We believe that buying a car should be an exciting and stress-free experience. With a carefully curated inventory of vehicles ranging from practical family cars to high-performance sports vehicles, we cater to every need and budget.</p>
+                        <ul>
+                            <li>Trusted by over 5,000+ satisfied customers</li>
+                            <li>Specializing in premium and luxury vehicles</li>
+                            <li>Dedicated customer support and after-sales service</li>
+                            <li>Transparent pricing with no hidden charges</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/bmw-x5-40-020.jpg" alt="Our Story">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission & Vision Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our <span>Mission & Vision</span></h2>
+                    <p>Driven by passion for excellence and customer satisfaction</p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="icon"><i class="fa-solid fa-bullseye"></i></span>
+                        <h4>Our Mission</h4>
+                        <p>To provide exceptional automotive sales and service experiences, making premium vehicle ownership accessible and enjoyable for every customer in Nigeria and beyond.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <span class="icon"><i class="fa-solid fa-telescope"></i></span>
+                        <h4>Our Vision</h4>
+                        <p>To become the most trusted and customer-centric automotive dealership, recognized for innovation, quality, and excellence in everything we do.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <span class="icon"><i class="fa-solid fa-heart"></i></span>
+                        <h4>Our Values</h4>
+                        <p>Integrity, transparency, customer focus, and continuous innovation guide every decision we make, ensuring we exceed expectations every single time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="about-section alternate">
+            <div class="container">
+                <div class="about-content reverse">
+                    <div class="about-text">
+                        <h3>Why Choose Marvellous Drive?</h3>
+                        <p>We're more than just a car dealership. We're your trusted partner in finding the perfect vehicle that matches your lifestyle and aspirations.</p>
+                        <ul>
+                            <li>Extensive selection of premium and luxury vehicles</li>
+                            <li>Transparent pricing with competitive rates</li>
+                            <li>Expert team with years of industry experience</li>
+                            <li>Flexible financing and payment options</li>
+                            <li>Comprehensive after-sales support and maintenance</li>
+                            <li>Quality inspection and warranty on all vehicles</li>
+                            <li>24/7 customer support for your convenience</li>
+                            <li>Trade-in services for your current vehicle</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/900.jpg" alt="Why Choose Us">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>By The <span>Numbers</span></h2>
+                    <p>Our commitment to excellence is reflected in our achievements</p>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="number">5,000+</div>
+                        <div class="label">Happy Customers</div>
+                        <div class="description">Satisfied clients who have found their perfect vehicle</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="number">120+</div>
+                        <div class="label">Available Cars</div>
+                        <div class="description">Premium vehicles in stock, ready for you</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="number">11+</div>
+                        <div class="label">Years Experience</div>
+                        <div class="description">Over a decade of trusted service</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="number">24/7</div>
+                        <div class="label">Customer Support</div>
+                        <div class="description">Always here to assist you, anytime, anywhere</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="about-section alternate">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Meet Our <span>Team</span></h2>
+                    <p>Passionate professionals dedicated to your satisfaction</p>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Chidinma Okonkwo</h4>
+                            <p>CEO & Founder</p>
+                            <p class="description">Visionary leader with 15+ years in automotive industry</p>
+                            <div class="member-socials">
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Ahmed Hassan</h4>
+                            <p>Head of Sales</p>
+                            <p class="description">Expert in customer relations and vehicle matching</p>
+                            <div class="member-socials">
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Zainab Ibrahim</h4>
+                            <p>Customer Success Manager</p>
+                            <p class="description">Dedicated to ensuring your buying journey is smooth</p>
+                            <div class="member-socials">
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Tunde Oladele</h4>
+                            <p>Service & Maintenance Lead</p>
+                            <p class="description">Ensuring your vehicle stays in perfect condition</p>
+                            <div class="member-socials">
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Blessing Adeyemi</h4>
+                            <p>Marketing & Brand Manager</p>
+                            <p class="description">Building lasting relationships with our valued clients</p>
+                            <div class="member-socials">
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <h4>Emeka Uche</h4>
+                            <p>Finance & Operations Director</p>
+                            <p class="description">Managing seamless transactions and operations</p>
+                            <div class="member-socials">
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-cta">
+                    <h2>Ready to Find Your Perfect Vehicle?</h2>
+                    <p>Explore our exclusive inventory and discover the car of your dreams today. Our team is ready to assist you!</p>
+                    <div class="cta-buttons">
+                        <a href="cars.html" class="cta-btn primary">Browse Our Cars</a>
+                        <a href="#" class="cta-btn secondary">Book Test Drive</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #111; color: #fff; padding: 40px 0; margin-top: 60px; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Marvellous Drive. All rights reserved. | Designed with <i class="fa-solid fa-heart" style="color: #e41e26;"></i> by Our Team</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to top when About button is clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutLinks = document.querySelectorAll('a[href="about.html"]');
+            
+            aboutLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // If we're already on the about page, scroll to top
+                    if (window.location.pathname.includes('about.html')) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

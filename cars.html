@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
 
@@ -45,11 +51,11 @@
                     <p>From luxury SUVs to sporty performance cars, we offer premium vehicles selected for quality, comfort, and value.</p>
 
                     <div class="filter-tags">
-                        <span class="filter-tag active">All Cars</span>
-                        <span class="filter-tag">SUV</span>
-                        <span class="filter-tag">Luxury</span>
-                        <span class="filter-tag">Sports</span>
-                        <span class="filter-tag">Hybrid</span>
+                        <button class="filter-tag active" data-filter="all">All Cars</button>
+                        <button class="filter-tag" data-filter="suv">SUV</button>
+                        <button class="filter-tag" data-filter="luxury">Luxury</button>
+                        <button class="filter-tag" data-filter="sports">Sports</button>
+                        <button class="filter-tag" data-filter="hybrid">Hybrid</button>
                     </div>
                 </div>
 
@@ -78,6 +84,7 @@
                 </div>
 
                 <div class="car-grid">
+                    <!-- SUV CATEGORY -->
                     <article class="inventory-card">
                         <div class="image-wrap">
                             <img src="images/bmw-x5-40-020.jpg" alt="BMW X5">
@@ -85,45 +92,18 @@
                         <div class="card-body">
                             <div class="title-row">
                                 <h3>BMW X5</h3>
-                                <span class="price">$65,000</span>
+                                <span class="price">₦97,500,000</span>
                             </div>
-                            <p class="model">Luxury SUV</p>
+                            <p class="model">2025 SUV X5</p>
                             <div class="tag-list">
                                 <span class="tag">SUV</span>
                                 <span class="tag">Petrol</span>
-                                <span class="tag">Automatic</span>
+                                <span class="tag">455 HP</span>
                             </div>
                             <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 12,000 km</li>
-                                <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
-                                <li><i class="fa-solid fa-calendar-days"></i> 2023</li>
-                            </ul>
-                            <div class="cta-row">
-                                <a href="#" class="primary-btn">View Details</a>
-                                <button class="secondary-btn">Book Test Drive</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="inventory-card">
-                        <div class="image-wrap">
-                            <img src="images/images (65).jpg" alt="Mercedes C-Class">
-                        </div>
-                        <div class="card-body">
-                            <div class="title-row">
-                                <h3>Mercedes C-Class</h3>
-                                <span class="price">$45,000</span>
-                            </div>
-                            <p class="model">Executive Sedan</p>
-                            <div class="tag-list">
-                                <span class="tag">Sedan</span>
-                                <span class="tag">Petrol</span>
-                                <span class="tag">Automatic</span>
-                            </div>
-                            <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 15,000 km</li>
+                                <li><i class="fa-solid fa-horse"></i> 455 HP</li>
                                 <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
-                                <li><i class="fa-solid fa-calendar-days"></i> 2022</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
                             </ul>
                             <div class="cta-row">
                                 <a href="#" class="primary-btn">View Details</a>
@@ -132,25 +112,26 @@
                         </div>
                     </article>
 
+                    <!-- SUV 2: Range Rover Sport -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (66).jpg" alt="Audi Q7">
+                            <img src="images/900.jpg" alt="Range Rover Sport">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
-                                <h3>Audi Q7</h3>
-                                <span class="price">$55,000</span>
+                                <h3>Range Rover Sport</h3>
+                                <span class="price">₦108,750,000</span>
                             </div>
-                            <p class="model">Premium SUV</p>
+                            <p class="model">2025 SUV Sport</p>
                             <div class="tag-list">
                                 <span class="tag">SUV</span>
                                 <span class="tag">Diesel</span>
-                                <span class="tag">Automatic</span>
+                                <span class="tag">575 HP</span>
                             </div>
                             <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 10,500 km</li>
+                                <li><i class="fa-solid fa-horse"></i> 575 HP</li>
                                 <li><i class="fa-solid fa-gas-pump"></i> Diesel</li>
-                                <li><i class="fa-solid fa-calendar-days"></i> 2021</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
                             </ul>
                             <div class="cta-row">
                                 <a href="#" class="primary-btn">View Details</a>
@@ -159,6 +140,7 @@
                         </div>
                     </article>
 
+                    <!-- SUV 3: Toyota RAV4 -->
                     <article class="inventory-card">
                         <div class="image-wrap">
                             <img src="images/images (67).jpg" alt="Toyota RAV4">
@@ -166,16 +148,16 @@
                         <div class="card-body">
                             <div class="title-row">
                                 <h3>Toyota RAV4</h3>
-                                <span class="price">$35,000</span>
+                                <span class="price">₦52,500,000</span>
                             </div>
-                            <p class="model">Family SUV</p>
+                            <p class="model">2024 SUV Hybrid</p>
                             <div class="tag-list">
                                 <span class="tag">SUV</span>
                                 <span class="tag">Hybrid</span>
-                                <span class="tag">AWD</span>
+                                <span class="tag">203 HP</span>
                             </div>
                             <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 18,000 km</li>
+                                <li><i class="fa-solid fa-horse"></i> 203 HP</li>
                                 <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
                                 <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
                             </ul>
@@ -186,25 +168,26 @@
                         </div>
                     </article>
 
+                    <!-- SUV 4: Audi Q7 -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (68).jpg" alt="Porsche 911">
+                            <img src="images/images (66).jpg" alt="Audi Q7">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
-                                <h3>Porsche 911</h3>
-                                <span class="price">$82,000</span>
+                                <h3>Audi Q7</h3>
+                                <span class="price">₦82,500,000</span>
                             </div>
-                            <p class="model">Sports Coupe</p>
+                            <p class="model">2026 SUV Premium</p>
                             <div class="tag-list">
-                                <span class="tag">Sport</span>
+                                <span class="tag">SUV</span>
                                 <span class="tag">Petrol</span>
-                                <span class="tag">Manual</span>
+                                <span class="tag">355 HP</span>
                             </div>
                             <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 9,200 km</li>
+                                <li><i class="fa-solid fa-horse"></i> 355 HP</li>
                                 <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
-                                <li><i class="fa-solid fa-calendar-days"></i> 2023</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
                             </ul>
                             <div class="cta-row">
                                 <a href="#" class="primary-btn">View Details</a>
@@ -213,25 +196,54 @@
                         </div>
                     </article>
 
+                    <!-- SUV 5: Lexus RX -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (69).jpg" alt="Range Rover Sport">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Lexus RX">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
-                                <h3>Range Rover Sport</h3>
-                                <span class="price">$72,500</span>
+                                <h3>Lexus RX 500h</h3>
+                                <span class="price">₦67,500,000</span>
                             </div>
-                            <p class="model">Luxury SUV</p>
+                            <p class="model">2025 SUV Luxury</p>
+                            <div class="tag-list">
+                                <span class="tag">SUV</span>
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">308 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 308 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SUV 6: Jeep Grand Cherokee -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (66).jpg" alt="Jeep Grand Cherokee">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Jeep Grand Cherokee</h3>
+                                <span class="price">₦71,250,000</span>
+                            </div>
+                            <p class="model">2025 SUV Premium</p>
                             <div class="tag-list">
                                 <span class="tag">SUV</span>
                                 <span class="tag">Diesel</span>
-                                <span class="tag">Automatic</span>
+                                <span class="tag">260 HP</span>
                             </div>
                             <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 14,400 km</li>
+                                <li><i class="fa-solid fa-horse"></i> 260 HP</li>
                                 <li><i class="fa-solid fa-gas-pump"></i> Diesel</li>
-                                <li><i class="fa-solid fa-calendar-days"></i> 2022</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
                             </ul>
                             <div class="cta-row">
                                 <a href="#" class="primary-btn">View Details</a>
@@ -240,24 +252,53 @@
                         </div>
                     </article>
 
+                    <!-- SUV 7: Hyundai Santa Fe -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (70).jpg" alt="Tesla Model Y">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Hyundai Santa Fe">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
-                                <h3>Tesla Model Y</h3>
-                                <span class="price">$48,900</span>
+                                <h3>Hyundai Santa Fe</h3>
+                                <span class="price">₦45,000,000</span>
                             </div>
-                            <p class="model">Electric SUV</p>
+                            <p class="model">2026 SUV Family</p>
                             <div class="tag-list">
-                                <span class="tag">EV</span>
-                                <span class="tag">Electric</span>
-                                <span class="tag">Auto</span>
+                                <span class="tag">SUV</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">191 HP</span>
                             </div>
                             <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 8,700 km</li>
-                                <li><i class="fa-solid fa-bolt"></i> Electric</li>
+                                <li><i class="fa-solid fa-horse"></i> 191 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SUV 8: Kia Sorento -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Kia Sorento">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Kia Sorento</h3>
+                                <span class="price">₦55,500,000</span>
+                            </div>
+                            <p class="model">2024 SUV Midsize</p>
+                            <div class="tag-list">
+                                <span class="tag">SUV</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">277 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 277 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
                                 <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
                             </ul>
                             <div class="cta-row">
@@ -267,25 +308,1118 @@
                         </div>
                     </article>
 
+                    <!-- SUV 9: Mazda CX-5 -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (71).jpg" alt="Mercedes GLE">
+                            <img src="images/images (67).jpg" alt="Mazda CX-5">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
-                                <h3>Mercedes GLE</h3>
-                                <span class="price">$68,000</span>
+                                <h3>Mazda CX-5</h3>
+                                <span class="price">₦43,500,000</span>
                             </div>
-                            <p class="model">Luxury SUV</p>
+                            <p class="model">2025 SUV Compact</p>
                             <div class="tag-list">
                                 <span class="tag">SUV</span>
                                 <span class="tag">Petrol</span>
-                                <span class="tag">Automatic</span>
+                                <span class="tag">187 HP</span>
                             </div>
                             <ul class="specs">
-                                <li><i class="fa-solid fa-road"></i> 11,200 km</li>
+                                <li><i class="fa-solid fa-horse"></i> 187 HP</li>
                                 <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
-                                <li><i class="fa-solid fa-calendar-days"></i> 2023</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SUV 10: Volkswagen Tiguan -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Volkswagen Tiguan">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Volkswagen Tiguan</h3>
+                                <span class="price">₦48,750,000</span>
+                            </div>
+                            <p class="model">2026 SUV Compact</p>
+                            <div class="tag-list">
+                                <span class="tag">SUV</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">220 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 220 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SUV 11: Lincoln Aviator -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Lincoln Aviator">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Lincoln Aviator</h3>
+                                <span class="price">₦85,500,000</span>
+                            </div>
+                            <p class="model">2025 SUV Luxury</p>
+                            <div class="tag-list">
+                                <span class="tag">SUV</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">400 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 400 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SUV 12: Genesis GV80 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (66).jpg" alt="Genesis GV80">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Genesis GV80</h3>
+                                <span class="price">₦92,250,000</span>
+                            </div>
+                            <p class="model">2026 SUV Premium</p>
+                            <div class="tag-list">
+                                <span class="tag">SUV</span>
+                                <span class="tag">Diesel</span>
+                                <span class="tag">375 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 375 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Diesel</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 1: Mercedes S-Class -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (65).jpg" alt="Mercedes S-Class">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Mercedes S-Class</h3>
+                                <span class="price">₦150,000,000</span>
+                            </div>
+                            <p class="model">2026 Luxury S580</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">503 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 503 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 2: BMW 7 Series -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="BMW 7 Series">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>BMW 7 Series</h3>
+                                <span class="price">₦142,500,000</span>
+                            </div>
+                            <p class="model">2025 Luxury M760i</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">523 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 523 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 3: Audi A8 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (66).jpg" alt="Audi A8">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Audi A8</h3>
+                                <span class="price">₦105,000,000</span>
+                            </div>
+                            <p class="model">2025 Luxury A8L</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">335 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 335 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 4: Lexus LS -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Lexus LS">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Lexus LS 500h</h3>
+                                <span class="price">₦120,000,000</span>
+                            </div>
+                            <p class="model">2026 Luxury Sedan</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">430 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 430 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 5: Jaguar XJ -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (65).jpg" alt="Jaguar XJ">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Jaguar XJ</h3>
+                                <span class="price">₦112,500,000</span>
+                            </div>
+                            <p class="model">2024 Luxury Sedan</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">380 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 380 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 6: Rolls Royce Ghost -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Rolls Royce Ghost">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Rolls Royce Ghost</h3>
+                                <span class="price">₦210,000,000</span>
+                            </div>
+                            <p class="model">2026 Luxury Ultra</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">563 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 563 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 7: Bentley Flying Spur -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (65).jpg" alt="Bentley Flying Spur">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Bentley Flying Spur</h3>
+                                <span class="price">₦180,000,000</span>
+                            </div>
+                            <p class="model">2025 Luxury Premium</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">626 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 626 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 8: Porsche Panamera -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Porsche Panamera">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Porsche Panamera</h3>
+                                <span class="price">₦127,500,000</span>
+                            </div>
+                            <p class="model">2024 Luxury Sport</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">440 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 440 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 9: Maserati Quattroporte -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Maserati Quattroporte">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Maserati Quattroporte</h3>
+                                <span class="price">₦135,000,000</span>
+                            </div>
+                            <p class="model">2025 Luxury Grand</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">430 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 430 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 10: Genesis G90 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (66).jpg" alt="Genesis G90">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Genesis G90</h3>
+                                <span class="price">₦97,500,000</span>
+                            </div>
+                            <p class="model">2026 Luxury Sedan</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">375 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 375 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 11: Infiniti Q70 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Infiniti Q70">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Infiniti Q70</h3>
+                                <span class="price">₦82,500,000</span>
+                            </div>
+                            <p class="model">2025 Luxury Sedan</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">400 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 400 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- LUXURY 12: Cadillac CT6 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Cadillac CT6">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Cadillac CT6</h3>
+                                <span class="price">₦88,500,000</span>
+                            </div>
+                            <p class="model">2024 Luxury Grand</p>
+                            <div class="tag-list">
+                                <span class="tag">Luxury</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">400 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 400 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 1: Porsche 911 Turbo -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/2020-Porsche-911-Turbo-S-014-2160-scaled-1.jpeg" alt="Porsche 911">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Porsche 911 Turbo</h3>
+                                <span class="price">₦123,000,000</span>
+                            </div>
+                            <p class="model">2025 Sports Turbo</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">641 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 641 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 2: Ferrari F8 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Ferrari F8">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Ferrari F8 Tributo</h3>
+                                <span class="price">₦165,000,000</span>
+                            </div>
+                            <p class="model">2025 Sports Exotic</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">710 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 710 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 3: Lamborghini Huracán -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Lamborghini Huracán">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Lamborghini Huracán</h3>
+                                <span class="price">₦157,500,000</span>
+                            </div>
+                            <p class="model">2026 Sports Exotic</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">631 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 631 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 4: Chevrolet Corvette -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/2020-Porsche-911-Turbo-S-014-2160-scaled-1.jpeg" alt="Corvette Stingray">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Corvette Stingray</h3>
+                                <span class="price">₦82,500,000</span>
+                            </div>
+                            <p class="model">2025 Sports American</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">495 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 495 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 5: Ford Mustang Shelby -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (65).jpg" alt="Mustang Shelby GT500">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Mustang Shelby GT500</h3>
+                                <span class="price">₦75,000,000</span>
+                            </div>
+                            <p class="model">2024 Sports Muscle</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">760 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 760 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 6: Dodge Challenger Hellcat -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/2020-Porsche-911-Turbo-S-014-2160-scaled-1.jpeg" alt="Dodge Challenger">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Dodge Challenger Hellcat</h3>
+                                <span class="price">₦67,500,000</span>
+                            </div>
+                            <p class="model">2025 Sports Muscle</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">717 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 717 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 7: McLaren 720S -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="McLaren 720S">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>McLaren 720S</h3>
+                                <span class="price">₦150,000,000</span>
+                            </div>
+                            <p class="model">2026 Sports Supercar</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">710 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 710 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 8: Nissan GT-R -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Nissan GT-R">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Nissan GT-R</h3>
+                                <span class="price">₦105,000,000</span>
+                            </div>
+                            <p class="model">2024 Sports Performance</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">565 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 565 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 9: BMW M4 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (66).jpg" alt="BMW M4">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>BMW M4</h3>
+                                <span class="price">₦90,000,000</span>
+                            </div>
+                            <p class="model">2025 Sports Performance</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">503 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 503 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 10: Audi R8 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/2020-Porsche-911-Turbo-S-014-2160-scaled-1.jpeg" alt="Audi R8">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Audi R8</h3>
+                                <span class="price">₦135,000,000</span>
+                            </div>
+                            <p class="model">2026 Sports Supercar</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">602 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 602 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 11: Jaguar F-Type -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Jaguar F-Type">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Jaguar F-Type</h3>
+                                <span class="price">₦99,000,000</span>
+                            </div>
+                            <p class="model">2025 Sports Convertible</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">575 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 575 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SPORTS 12: Chevrolet Camaro SS -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Chevrolet Camaro SS">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Chevrolet Camaro SS</h3>
+                                <span class="price">₦72,000,000</span>
+                            </div>
+                            <p class="model">2024 Sports Muscle</p>
+                            <div class="tag-list">
+                                <span class="tag">Sports</span>
+                                <span class="tag">Petrol</span>
+                                <span class="tag">455 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 455 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Petrol</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 1: Toyota Prius Prime -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/Tesla model Y-16.webp" alt="Toyota Prius Prime">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Toyota Prius Prime</h3>
+                                <span class="price">₦28,500,000</span>
+                            </div>
+                            <p class="model">2025 Hybrid Eco</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">220 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 220 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Hybrid Plug-in</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 2: Honda Accord Hybrid -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (66).jpg" alt="Honda Accord Hybrid">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Honda Accord Hybrid</h3>
+                                <span class="price">₦37,500,000</span>
+                            </div>
+                            <p class="model">2024 Hybrid Sedan</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">212 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 212 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 3: Lexus ES Hybrid -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Lexus ES Hybrid">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Lexus ES Hybrid</h3>
+                                <span class="price">₦60,000,000</span>
+                            </div>
+                            <p class="model">2026 Hybrid Luxury</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">215 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 215 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 4: Toyota Camry Hybrid -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/Tesla model Y-16.webp" alt="Toyota Camry Hybrid">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Toyota Camry Hybrid</h3>
+                                <span class="price">₦40,500,000</span>
+                            </div>
+                            <p class="model">2025 Hybrid Sedan</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">208 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 208 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 5: Hyundai Ioniq Hybrid -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (67).jpg" alt="Hyundai Ioniq Hybrid">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Hyundai Ioniq Hybrid</h3>
+                                <span class="price">₦30,000,000</span>
+                            </div>
+                            <p class="model">2024 Hybrid Eco</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">193 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 193 HP</li>
+                                <li><i class="fa-solid fa-gas-pump"></i> Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 6: BMW i7 -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/Tesla model Y-16.webp" alt="BMW i7">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>BMW i7 xDrive50</h3>
+                                <span class="price">₦105,000,000</span>
+                            </div>
+                            <p class="model">2025 Hybrid Luxury</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">394 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 394 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Plug-in Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 7: Acura NSX -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/900.jpg" alt="Acura NSX">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Acura NSX</h3>
+                                <span class="price">₦97,500,000</span>
+                            </div>
+                            <p class="model">2024 Hybrid Performance</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">573 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 573 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Plug-in Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2024</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 8: Mercedes C-Class Hybrid -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (65).jpg" alt="Mercedes C-Class Hybrid">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Mercedes C-Class Hybrid</h3>
+                                <span class="price">₦67,500,000</span>
+                            </div>
+                            <p class="model">2026 Hybrid Sedan</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">255 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 255 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Plug-in Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 9: Audi A6 Hybrid -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Audi A6 Hybrid">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Audi A6 Hybrid</h3>
+                                <span class="price">₦72,000,000</span>
+                            </div>
+                            <p class="model">2025 Hybrid Premium</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">362 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 362 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Plug-in Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 10: Mitsubishi Outlander PHEV -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (67).jpg" alt="Mitsubishi Outlander PHEV">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Mitsubishi Outlander PHEV</h3>
+                                <span class="price">₦52,500,000</span>
+                            </div>
+                            <p class="model">2026 Hybrid SUV</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">248 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 248 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Plug-in Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 11: Kia Niro EV Hybrid -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/bmw-x5-40-020.jpg" alt="Kia Niro EV">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Kia Niro EV Hybrid</h3>
+                                <span class="price">₦48,000,000</span>
+                            </div>
+                            <p class="model">2025 Hybrid Crossover</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">195 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 195 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Plug-in Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2025</li>
+                            </ul>
+                            <div class="cta-row">
+                                <a href="#" class="primary-btn">View Details</a>
+                                <button class="secondary-btn">Book Test Drive</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HYBRID 12: Volvo XC60 Recharge -->
+                    <article class="inventory-card">
+                        <div class="image-wrap">
+                            <img src="images/images (66).jpg" alt="Volvo XC60 Recharge">
+                        </div>
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h3>Volvo XC60 Recharge</h3>
+                                <span class="price">₦75,000,000</span>
+                            </div>
+                            <p class="model">2026 Hybrid Premium</p>
+                            <div class="tag-list">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Petrol/Electric</span>
+                                <span class="tag">407 HP</span>
+                            </div>
+                            <ul class="specs">
+                                <li><i class="fa-solid fa-horse"></i> 407 HP</li>
+                                <li><i class="fa-solid fa-plug"></i> Plug-in Hybrid</li>
+                                <li><i class="fa-solid fa-calendar-days"></i> 2026</li>
                             </ul>
                             <div class="cta-row">
                                 <a href="#" class="primary-btn">View Details</a>
@@ -297,6 +1431,58 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // Filter functionality for car cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-tag');
+            const carCards = document.querySelectorAll('.inventory-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Filter cars based on selected category
+                    carCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 10);
+                        } else {
+                            const carType = card.querySelector('.tag-list .tag:first-child')?.textContent.toLowerCase();
+                            if (carType === filter) {
+                                card.style.display = 'block';
+                                setTimeout(() => card.style.opacity = '1', 10);
+                            } else {
+                                card.style.opacity = '0';
+                                setTimeout(() => card.style.display = 'none', 300);
+                            }
+                        }
+                    });
+                });
+            });
+        });
+
+        // Scroll to top when Cars button is clicked
+        const carsLinks = document.querySelectorAll('a[href="cars.html"]');
+        carsLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // If we're already on the cars page, scroll to top
+                if (window.location.pathname.includes('cars.html')) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
