@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Marvellous Drive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e41e26;
+            --primary-dark: #b4151b;
+            --dark: #111111;
+            --text: #1d1d1d;
+            --muted: #6a6a6a;
+            --bg: #f6f6f6;
+            --card: #ffffff;
+            --shadow: 0 20px 45px rgba(17, 17, 17, 0.08);
+            --radius: 22px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button, input {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+        }
+
+        header {
+            background: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            min-height: 78px;
+        }
+
+        .logo h2 {
+            color: #fff;
+            font-size: clamp(1.1rem, 1.6vw, 1.7rem);
+            letter-spacing: 0.02em;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        nav a {
+            color: #fff;
+            display: inline-block;
+            font-size: 0.96rem;
+            padding: 10px 4px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .header-right p {
+            color: #fff;
+            font-size: 0.88rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #fff;
+            padding: 14px 26px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .blog-page {
+            background: var(--bg);
+        }
+
+        .blog-hero {
+            background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(17,17,17,0.7)),
+                url('images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover no-repeat;
+            padding: 110px 0 80px;
+            color: #fff;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: rgba(228, 30, 38, 0.15);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #f6d0d2;
+            padding: 8px 16px;
+            border-radius: 999px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+            margin-bottom: 18px;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .blog-hero h1 span {
+            color: #ff3b3b;
+        }
+
+        .blog-hero p {
+            color: rgba(255,255,255,0.82);
+            font-size: 1.07rem;
+        }
+
+        .blog-main {
+            padding: 80px 0 100px;
+        }
+
+        .blog-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tab {
+            border: 1px solid rgba(17,17,17,0.08);
+            background: #fff;
+            color: var(--text);
+            cursor: pointer;
+            border-radius: 999px;
+            padding: 11px 18px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        .tab.active,
+        .tab:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            border: 1px solid rgba(17,17,17,0.08);
+            border-radius: 999px;
+            padding: 10px 16px;
+            min-width: min(100%, 280px);
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .search-box i {
+            color: var(--muted);
+        }
+
+        .featured-post {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 44px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+        }
+
+        .featured-image {
+            min-height: 100%;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 16px;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .featured-content h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+
+        .featured-content p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 22px;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        .read-more:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .post-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 45px rgba(17, 17, 17, 0.12);
+        }
+
+        .post-image {
+            position: relative;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .post-tag {
+            position: absolute;
+            left: 18px;
+            bottom: 16px;
+            background: rgba(17,17,17,0.8);
+            color: #fff;
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .post-content {
+            padding: 22px 22px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .post-content h3 {
+            font-size: 1.3rem;
+            line-height: 1.45;
+            margin-bottom: 12px;
+            color: #111;
+        }
+
+        .post-content p {
+            color: var(--muted);
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid rgba(17,17,17,0.06);
+            padding-top: 14px;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .read-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .newsletter {
+            margin-top: 80px;
+            background: linear-gradient(135deg, rgba(228, 30, 38, 0.96), rgba(180, 21, 27, 0.96));
+            border-radius: 24px;
+            padding: 58px 36px;
+            color: #fff;
+            box-shadow: 0 20px 45px rgba(228, 30, 38, 0.28);
+        }
+
+        .newsletter-inner {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .newsletter h3 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 12px;
+        }
+
+        .newsletter p {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 999px;
+            padding: 8px 8px 8px 18px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            min-width: 0;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.72);
+        }
+
+        .newsletter-form button {
+            border: none;
+            background: #fff;
+            color: var(--primary);
+            padding: 13px 22px;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 950px) {
+            .featured-post,
+            .newsletter-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .posts-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 760px) {
+            header .container {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 14px 0;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .header-right {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .blog-toolbar {
+                align-items: flex-start;
+            }
+
+            .newsletter {
+                padding: 36px 22px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                border-radius: 20px;
+                padding: 16px;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2><span>MARVELLOUS</span> DRIVE</h2>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <p><i class="fa-solid fa-phone"></i> +234 7058470957</p>
+                <a href="contact.html#enquiry" class="btn">Book Test Drive</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-page">
+        <section class="blog-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="eyebrow">Driving journal</span>
+                    <h1>Stories, tips, and ideas for <span>modern drivers</span></h1>
+                    <p>From practical maintenance advice to exciting car culture reads, discover content built for drivers who love performance, comfort, and smart travel.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-main">
+            <div class="container">
+                <div class="blog-toolbar">
+                    <div class="category-tabs" aria-label="Blog categories">
+                        <button class="tab active" data-filter="all">All</button>
+                        <button class="tab" data-filter="tips">Tips</button>
+                        <button class="tab" data-filter="reviews">Reviews</button>
+                        <button class="tab" data-filter="lifestyle">Lifestyle</button>
+                        <button class="tab" data-filter="news">News</button>
+                    </div>
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchInput" placeholder="Search articles...">
+                    </div>
+                </div>
+
+                <article class="featured-post" data-category="tips">
+                    <div class="featured-image">
+                        <img src="images/bmw-x5-40-020.jpg" alt="Featured car blog article">
+                    </div>
+                    <div class="featured-content">
+                        <div class="meta">
+                            <span><i class="fa-regular fa-calendar"></i> Aug 18, 2026</span>
+                            <span><i class="fa-regular fa-user"></i> Marvellous Drive</span>
+                            <span><i class="fa-solid fa-book-open"></i> Tips</span>
+                        </div>
+                        <h2>5 simple habits that keep your car running better for longer</h2>
+                        <p>Regular care doesn’t have to be complicated. Learn the smartest routines that protect your engine, save fuel, and keep every ride smooth and stress-free.</p>
+                        <a href="#" class="read-more">Read article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <div class="posts-grid">
+                    <article class="post-card" data-category="reviews">
+                        <div class="post-image">
+                            <img src="images/images (66).jpg" alt="BMW review">
+                            <span class="post-tag">Reviews</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="meta">
+                                <span><i class="fa-regular fa-calendar"></i> Aug 12</span>
+                                <span><i class="fa-regular fa-user"></i> Admin</span>
+                            </div>
+                            <h3>Why the BMW X5 keeps setting the standard for premium SUVs</h3>
+                            <p>Luxury, performance, and comfort combine in a way that makes every road feel like a better road.</p>
+                            <div class="post-footer">
+                                <span>4 min read</span>
+                                <a href="#" class="read-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="lifestyle">
+                        <div class="post-image">
+                            <img src="images/900.jpg" alt="Luxury driving lifestyle">
+                            <span class="post-tag">Lifestyle</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="meta">
+                                <span><i class="fa-regular fa-calendar"></i> Aug 08</span>
+                                <span><i class="fa-regular fa-user"></i> Team</span>
+                            </div>
+                            <h3>Luxury driving: how to turn your daily commute into a premium experience</h3>
+                            <p>From cabin comfort to route planning, small details can make ordinary driving feel like an upgrade.</p>
+                            <div class="post-footer">
+                                <span>3 min read</span>
+                                <a href="#" class="read-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="news">
+                        <div class="post-image">
+                            <img src="images/images (67).jpg" alt="Car news">
+                            <span class="post-tag">News</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="meta">
+                                <span><i class="fa-regular fa-calendar"></i> Aug 04</span>
+                                <span><i class="fa-regular fa-user"></i> Editor</span>
+                            </div>
+                            <h3>Top vehicle trends shaping the 2026 auto market in Nigeria</h3>
+                            <p>Electric efficiency, smart technology, and comfort-first designs are reshaping what drivers expect.</p>
+                            <div class="post-footer">
+                                <span>5 min read</span>
+                                <a href="#" class="read-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="tips">
+                        <div class="post-image">
+                            <img src="images/2020-Porsche-911-Turbo-S-014-2160-scaled-1.jpeg" alt="Car maintenance tips">
+                            <span class="post-tag">Tips</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jul 30</span>
+                                <span><i class="fa-regular fa-user"></i> Staff</span>
+                            </div>
+                            <h3>How to prepare your car before a long road trip this season</h3>
+                            <p>Check the right systems before departure and reduce the stress of unexpected breakdowns on the road.</p>
+                            <div class="post-footer">
+                                <span>6 min read</span>
+                                <a href="#" class="read-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="reviews">
+                        <div class="post-image">
+                            <img src="images/images (65).jpg" alt="Luxury car review">
+                            <span class="post-tag">Reviews</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jul 25</span>
+                                <span><i class="fa-regular fa-user"></i> Grace</span>
+                            </div>
+                            <h3>Mercedes S-Class review: where comfort meets unmistakable prestige</h3>
+                            <p>From cabin refinement to road confidence, this flagship sedan continues to impress discerning drivers.</p>
+                            <div class="post-footer">
+                                <span>4 min read</span>
+                                <a href="#" class="read-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" data-category="lifestyle">
+                        <div class="post-image">
+                            <img src="images/Tesla model Y-16.webp" alt="Electric lifestyle">
+                            <span class="post-tag">Lifestyle</span>
+                        </div>
+                        <div class="post-content">
+                            <div class="meta">
+                                <span><i class="fa-regular fa-calendar"></i> Jul 18</span>
+                                <span><i class="fa-regular fa-user"></i> Team</span>
+                            </div>
+                            <h3>Going electric: what to know before switching from fuel to EV</h3>
+                            <p>Cost, charging, and convenience all play a role. Here’s what new EV drivers wish they knew sooner.</p>
+                            <div class="post-footer">
+                                <span>5 min read</span>
+                                <a href="#" class="read-link">Read more <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="newsletter">
+                    <div class="newsletter-inner">
+                        <div>
+                            <h3>Get weekly driving inspiration</h3>
+                            <p>Fresh content, dealer insights, and stories made for modern drivers—delivered straight to your inbox.</p>
+                        </div>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email address" aria-label="Email address">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:#111; color:#fff; padding:40px 0; text-align:center;">
+        <div class="container">
+            <p>&copy; 2026 Marvellous Drive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const cards = document.querySelectorAll('.post-card');
+        const searchInput = document.getElementById('searchInput');
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((btn) => btn.classList.remove('active'));
+                tab.classList.add('active');
+
+                const selected = tab.dataset.filter;
+                cards.forEach((card) => {
+                    const category = card.dataset.category;
+                    const matchesCategory = selected === 'all' || category === selected;
+                    card.classList.toggle('hidden', !matchesCategory);
+                });
+            });
+        });
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.trim().toLowerCase();
+            const activeFilter = document.querySelector('.tab.active')?.dataset.filter || 'all';
+
+            cards.forEach((card) => {
+                const text = card.textContent.toLowerCase();
+                const category = card.dataset.category;
+                const matchesFilter = activeFilter === 'all' || category === activeFilter;
+                const matchesQuery = text.includes(query);
+                card.classList.toggle('hidden', !(matchesFilter && matchesQuery));
+            });
+        });
+
+        document.querySelector('.newsletter-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const button = event.currentTarget.querySelector('button');
+            const originalText = button.textContent;
+            button.textContent = 'Subscribed!';
+            button.disabled = true;
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+                event.currentTarget.reset();
+            }, 1800);
+        });
+    </script>
+</body>
+</html>

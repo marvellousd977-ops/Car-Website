@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Contact Marvellous Drive for vehicle enquiries, financing support, servicing, and test drives.">
+	<title>Contact | Marvellous Drive</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<style>
+		:root {
+			--red: #e41e26;
+			--red-dark: #b4151b;
+			--ink: #111;
+			--paper: #f5f5f3;
+			--muted: #707070;
+			--line: #e8e5e1;
+			--white: #fff;
+			--shadow: 0 18px 50px rgba(17, 17, 17, .09);
+		}
+
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+		html { scroll-behavior: smooth; }
+		body { background: var(--paper); color: #202020; font-family: 'Poppins', sans-serif; line-height: 1.6; }
+		a { color: inherit; text-decoration: none; }
+		button, input, select, textarea { font: inherit; }
+		.container { margin: 0 auto; max-width: 1200px; width: 92%; }
+
+		header { background: var(--ink); position: sticky; top: 0; z-index: 10; }
+		header .container { align-items: center; display: flex; gap: 24px; justify-content: space-between; min-height: 78px; }
+		.logo h2 { color: var(--white); font-size: 1.35rem; letter-spacing: .02em; }
+		.logo span { color: var(--red); }
+		nav ul { display: flex; flex-wrap: wrap; gap: 24px; list-style: none; }
+		nav a { color: var(--white); display: inline-block; font-size: .9rem; padding: 10px 4px; transition: color .25s ease; }
+		nav a:hover, nav a[aria-current="page"] { color: var(--red); }
+		.header-right { align-items: center; display: flex; gap: 15px; }
+		.header-right p { color: var(--white); font-size: .8rem; white-space: nowrap; }
+		.top-button, .submit-button { background: var(--red); border: 0; border-radius: 9px; color: var(--white); cursor: pointer; font-weight: 700; padding: 12px 19px; transition: background .25s ease, transform .25s ease; }
+		.top-button:hover, .submit-button:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+		.contact-hero { background: linear-gradient(110deg, rgba(17,17,17,.95), rgba(17,17,17,.62)), url('images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover; color: var(--white); padding: 92px 0 84px; }
+		.hero-copy { max-width: 700px; }
+		.eyebrow { color: #ff7277; font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+		.contact-hero h1 { font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 1.1; margin: 15px 0; }
+		.contact-hero h1 span { color: #ff3b43; }
+		.contact-hero p { color: rgba(255,255,255,.8); max-width: 610px; }
+
+		.contact-section { padding: 76px 0 90px; }
+		.contact-layout { align-items: start; display: grid; gap: 34px; grid-template-columns: .75fr 1.25fr; }
+		.contact-panel, .contact-form { background: var(--white); border-radius: 18px; box-shadow: var(--shadow); }
+		.contact-panel { background: var(--ink); color: var(--white); padding: 34px; }
+		.contact-panel h2, .contact-form h2 { font-size: 1.65rem; margin-bottom: 10px; }
+		.contact-panel > p { color: rgba(255,255,255,.7); font-size: .92rem; margin-bottom: 28px; }
+		.contact-detail { align-items: flex-start; border-top: 1px solid rgba(255,255,255,.13); display: flex; gap: 15px; padding: 19px 0; }
+		.contact-detail i { color: #ff4c52; font-size: 1.15rem; margin-top: 4px; width: 22px; }
+		.contact-detail strong { display: block; font-size: .88rem; }
+		.contact-detail span, .contact-detail a { color: rgba(255,255,255,.7); display: block; font-size: .83rem; }
+		.socials { display: flex; gap: 10px; margin-top: 20px; }
+		.socials a { align-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; display: flex; height: 36px; justify-content: center; transition: .25s ease; width: 36px; }
+		.socials a:hover { background: var(--red); border-color: var(--red); }
+
+		.contact-form { padding: 34px; }
+		.form-intro { color: var(--muted); font-size: .9rem; margin-bottom: 25px; }
+		.form-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); }
+		.field { display: flex; flex-direction: column; gap: 7px; }
+		.field.full { grid-column: 1 / -1; }
+		label { font-size: .82rem; font-weight: 700; }
+		label span { color: var(--red); }
+		input, select, textarea { background: #fbfbfa; border: 1px solid var(--line); border-radius: 8px; color: #202020; outline: 0; padding: 13px 14px; transition: border-color .2s ease, box-shadow .2s ease; width: 100%; }
+		textarea { min-height: 125px; resize: vertical; }
+		input:focus, select:focus, textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(228,30,38,.1); }
+		.consent { align-items: flex-start; display: flex; gap: 9px; margin: 20px 0; }
+		.consent input { accent-color: var(--red); margin-top: 5px; width: auto; }
+		.consent label { color: var(--muted); font-size: .76rem; font-weight: 400; }
+		.submit-button { font-size: .94rem; padding: 14px 24px; }
+		.form-status { color: #248345; display: none; font-size: .84rem; font-weight: 600; margin-top: 14px; }
+		.form-status.visible { display: block; }
+
+		.partners { background: var(--white); padding: 70px 0; }
+		.section-heading { margin: 0 auto 34px; max-width: 620px; text-align: center; }
+		.section-heading h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; margin: 10px 0; }
+		.section-heading p { color: var(--muted); font-size: .92rem; }
+		.brand-grid { display: grid; gap: 14px; grid-template-columns: repeat(6, 1fr); }
+		.brand-card { align-items: center; border: 1px solid var(--line); border-radius: 11px; display: flex; flex-direction: column; gap: 11px; justify-content: center; min-height: 125px; padding: 18px 10px; transition: border-color .25s ease, transform .25s ease; }
+		.brand-card:hover { border-color: var(--red); transform: translateY(-4px); }
+		.brand-mark { height: 48px; object-fit: contain; width: 104px; }
+		.brand-card strong { font-size: .78rem; text-align: center; }
+
+		footer { background: var(--ink); color: var(--white); padding: 30px 0; text-align: center; }
+		footer p { color: rgba(255,255,255,.65); font-size: .8rem; }
+
+		@media (max-width: 1000px) { .brand-grid { grid-template-columns: repeat(3, 1fr); } .header-right p { display: none; } }
+		@media (max-width: 760px) { header .container { flex-wrap: wrap; justify-content: center; padding: 15px 0; } nav ul { gap: 11px 17px; justify-content: center; } .header-right { width: 100%; justify-content: center; } .contact-hero { padding: 70px 0; } .contact-layout { grid-template-columns: 1fr; } .form-grid { grid-template-columns: 1fr; } .field.full { grid-column: auto; } }
+		@media (max-width: 480px) { .brand-grid { grid-template-columns: repeat(2, 1fr); } .contact-panel, .contact-form { padding: 24px 20px; } .top-button { padding: 10px 14px; } }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<a class="logo" href="home.html"><h2><span>MARVELLOUS</span> DRIVE</h2></a>
+			<nav aria-label="Primary navigation">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="cars.html">Cars</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="service.html">Services</a></li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a href="contact.html" aria-current="page">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="header-right">
+				<p><i class="fa-solid fa-phone"></i> +234 705 847 0957</p>
+				<a href="#enquiry" class="top-button">Book a test drive</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="contact-hero">
+			<div class="container hero-copy">
+				<span class="eyebrow">We are ready when you are</span>
+				<h1>Let’s find the car that feels <span>right.</span></h1>
+				<p>Tell our team what you need and we will help you compare options, arrange a viewing, or plan your next test drive.</p>
+			</div>
+		</section>
+
+		<section class="contact-section" id="enquiry">
+			<div class="container contact-layout">
+				<aside class="contact-panel">
+					<h2>Talk to our team</h2>
+					<p>Our specialists are available to make your purchase clear, comfortable, and personal.</p>
+					<div class="contact-detail"><i class="fa-solid fa-location-dot"></i><div><strong>Visit our showroom</strong><span>12 Admiralty Way, Lekki Phase 1, Lagos</span></div></div>
+					<div class="contact-detail"><i class="fa-solid fa-phone"></i><div><strong>Call or WhatsApp</strong><a href="tel:+2347058470957">+234 705 847 0957</a></div></div>
+					<div class="contact-detail"><i class="fa-solid fa-envelope"></i><div><strong>Email us</strong><a href="mailto:hello@marvellousdrive.com">hello@marvellousdrive.com</a></div></div>
+					<div class="contact-detail"><i class="fa-regular fa-clock"></i><div><strong>Opening hours</strong><span>Mon - Sat: 8:00 AM - 6:00 PM</span></div></div>
+					<div class="socials" aria-label="Social media links"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
+				</aside>
+
+				<div class="contact-form">
+					<h2>Send an enquiry</h2>
+					<p class="form-intro">Share a few details and a Marvellous Drive advisor will get back to you shortly.</p>
+					<form id="customerForm">
+						<div class="form-grid">
+							<div class="field"><label for="fullName">Full name <span>*</span></label><input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Your full name" required></div>
+							<div class="field"><label for="email">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+							<div class="field"><label for="phone">Phone number <span>*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+234 000 000 0000" required></div>
+							<div class="field"><label for="location">Your location</label><input id="location" name="location" type="text" autocomplete="address-level2" placeholder="City or state"></div>
+							<div class="field"><label for="interest">What are you interested in? <span>*</span></label><select id="interest" name="interest" required><option value="">Choose an option</option><option>Buying a car</option><option>Booking a test drive</option><option>Vehicle financing</option><option>Servicing and maintenance</option><option>Selling or valuing my car</option></select></div>
+							<div class="field"><label for="budget">Estimated budget</label><select id="budget" name="budget"><option value="">Select a range</option><option>Under ₦30,000,000</option><option>₦30,000,000 - ₦70,000,000</option><option>₦70,000,000 - ₦150,000,000</option><option>Above ₦150,000,000</option></select></div>
+							<div class="field full"><label for="message">How can we help? <span>*</span></label><textarea id="message" name="message" placeholder="Tell us your preferred brand, model, or the support you need..." required></textarea></div>
+						</div>
+						<div class="consent"><input id="consent" name="consent" type="checkbox" required><label for="consent">I agree that Marvellous Drive may use these details to respond to my enquiry. <span>*</span></label></div>
+						<button class="submit-button" type="submit"><i class="fa-solid fa-paper-plane"></i> Send my enquiry</button>
+						<p class="form-status" id="formStatus" role="status"></p>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section class="partners">
+			<div class="container">
+				<div class="section-heading"><span class="eyebrow">Trusted vehicle network</span><h2>Brands you can find with us</h2><p>We work with respected manufacturers and sourcing partners to give you more choice and confidence.</p></div>
+				<div class="brand-grid">
+					<div class="brand-card"><img class="brand-mark" src="images/mercedes-logo.svg" alt="Mercedes-Benz logo"><strong>Mercedes-Benz</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/bmw-logo.svg" alt="BMW logo"><strong>BMW</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/audi-logo.svg" alt="Audi logo"><strong>Audi</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="https://commons.wikimedia.org/wiki/Special:FilePath/Land%20Rover%20logo.svg" alt="Land Rover logo"><strong>Land Rover</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/porsche-logo.svg" alt="Porsche logo"><strong>Porsche</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/tesla-logo.svg" alt="Tesla logo"><strong>Tesla</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/ferrari-logo.svg" alt="Ferrari logo"><strong>Ferrari</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/lexus-logo.svg" alt="Lexus logo"><strong>Lexus</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/volvo-logo.svg" alt="Volvo logo"><strong>Volvo</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/toyota-logo.svg" alt="Toyota logo"><strong>Toyota</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/jeep-logo.svg" alt="Jeep logo"><strong>Jeep</strong></div>
+					<div class="brand-card"><img class="brand-mark" src="images/rollsroyce-logo.svg" alt="Rolls-Royce logo"><strong>Rolls-Royce</strong></div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer><div class="container"><p>&copy; 2026 Marvellous Drive. Your journey, expertly handled.</p></div></footer>
+
+	<script>
+		const customerForm = document.getElementById('customerForm');
+		const formStatus = document.getElementById('formStatus');
+
+		customerForm.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const details = Object.fromEntries(new FormData(customerForm));
+			details.submittedAt = new Date().toISOString();
+			localStorage.setItem('marvellousDriveCustomerEnquiry', JSON.stringify(details));
+			formStatus.textContent = `Thank you, ${details.fullName}. Your enquiry has been received. Our team will contact you shortly.`;
+			formStatus.classList.add('visible');
+			customerForm.reset();
+		});
+	</script>
+</body>
+</html>
