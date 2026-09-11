@@ -14,6 +14,129 @@
         html {
             scroll-behavior: smooth;
         }
+
+        .car-grid,
+        .inventory-card,
+        .card-body,
+        .title-row {
+            min-width: 0;
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 22px;
+        }
+
+        .inventory-card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .image-wrap {
+            flex: 0 0 auto;
+        }
+
+        .image-wrap img {
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 18px 16px 16px;
+        }
+
+        .title-row {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+        }
+
+        .title-row h3 {
+            font-size: 1.25rem;
+            line-height: 1.3;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        .price {
+            display: block;
+            width: 100%;
+            font-size: 1rem;
+            white-space: normal;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        .specs {
+            margin-bottom: 20px;
+        }
+
+        .cta-row {
+            flex-direction: column;
+            margin-top: auto;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            min-height: 46px;
+            width: 100%;
+        }
+
+        @media (min-width: 641px) {
+            .car-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 24px;
+            }
+
+            .inventory-card {
+                display: block;
+            }
+
+            .card-body {
+                padding: 20px 18px 18px;
+            }
+
+            .title-row {
+                align-items: center;
+                flex-direction: row;
+                gap: 12px;
+                width: auto;
+            }
+
+            .price {
+                width: auto;
+                white-space: nowrap;
+            }
+
+            .cta-row {
+                flex-direction: row;
+                margin-top: 0;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: auto;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .car-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 28px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .car-catalog {
+                padding: 55px 0 70px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -199,7 +322,7 @@
                     <!-- SUV 5: Lexus RX -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/bmw-x5-40-020.jpg" alt="Lexus RX">
+                            <img src="images/lexus-2025-rx-500h-f-sport.jpg" alt="Lexus RX">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -227,7 +350,7 @@
                     <!-- SUV 6: Jeep Grand Cherokee -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (66).jpg" alt="Jeep Grand Cherokee">
+                            <img src="images/Jeep-Grand cherokee.jpg" alt="Jeep Grand Cherokee">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -255,7 +378,7 @@
                     <!-- SUV 7: Hyundai Santa Fe -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/bmw-x5-40-020.jpg" alt="Hyundai Santa Fe">
+                            <img src="images/Hyundia Fe.jpg" alt="Hyundai Santa Fe">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -283,7 +406,7 @@
                     <!-- SUV 8: Kia Sorento -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/900.jpg" alt="Kia Sorento">
+                            <img src="images/Kia Serento.jpg" alt="Kia Sorento">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -311,7 +434,7 @@
                     <!-- SUV 9: Mazda CX-5 -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (67).jpg" alt="Mazda CX-5">
+                            <img src="images/CX-60-PHEV-1.jpg" alt="Mazda CX-5">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -339,7 +462,7 @@
                     <!-- SUV 10: Volkswagen Tiguan -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/bmw-x5-40-020.jpg" alt="Volkswagen Tiguan">
+                            <img src="images/Volkswagen-Tiguan.jpg" alt="Volkswagen Tiguan">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -367,7 +490,7 @@
                     <!-- SUV 11: Lincoln Aviator -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/900.jpg" alt="Lincoln Aviator">
+                            <img src="images/lincoln-aviator3.jpg" alt="Lincoln Aviator">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -395,7 +518,7 @@
                     <!-- SUV 12: Genesis GV80 -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (66).jpg" alt="Genesis GV80">
+                            <img src="images/Genesis-gv80.jpg" alt="Genesis GV80">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -423,7 +546,7 @@
                     <!-- LUXURY 1: Mercedes S-Class -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (65).jpg" alt="Mercedes S-Class">
+                            <img src="images/S-Class.jpg" alt="Mercedes S-Class">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -451,7 +574,7 @@
                     <!-- LUXURY 2: BMW 7 Series -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/bmw-x5-40-020.jpg" alt="BMW 7 Series">
+                            <img src="images/bmw i7 xdrive.webp" alt="BMW 7 Series">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -479,7 +602,7 @@
                     <!-- LUXURY 3: Audi A8 -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (66).jpg" alt="Audi A8">
+                            <img src="images/audi-a8.jpg" alt="Audi A8">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -507,7 +630,7 @@
                     <!-- LUXURY 4: Lexus LS -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/900.jpg" alt="Lexus LS">
+                            <img src="images/lexus-2025-rx-500h-f-sport.jpg" alt="Lexus LS">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
@@ -535,7 +658,7 @@
                     <!-- LUXURY 5: Jaguar XJ -->
                     <article class="inventory-card">
                         <div class="image-wrap">
-                            <img src="images/images (65).jpg" alt="Jaguar XJ">
+                            <img src="images/jaguar-xjl.jpg" alt="Jaguar XJ">
                         </div>
                         <div class="card-body">
                             <div class="title-row">
