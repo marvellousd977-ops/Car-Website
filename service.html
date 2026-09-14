@@ -21,11 +21,37 @@
         }
 
         .service-hero {
-            background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(17,17,17,0.75)),
-                url('images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover no-repeat;
-            padding: 120px 0 80px;
+            background: #111;
             color: #fff;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
             text-align: center;
+        }
+
+        .service-hero::before {
+            content: "";
+            position: absolute;
+            inset: -8% -4%;
+            background: linear-gradient(120deg, rgba(17,17,17,0.7), rgba(17,17,17,0.38)),
+                url('images/bmw m4.webp') center/cover no-repeat;
+            animation: heroZoom 18s ease-in-out infinite alternate;
+            transform: scale(1.08);
+            z-index: -2;
+        }
+
+        .service-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(17,17,17,0.18);
+            z-index: -1;
+        }
+
+        .service-hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .service-hero h1 {

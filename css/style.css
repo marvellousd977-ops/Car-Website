@@ -109,10 +109,30 @@ background:#b9151d;
 
 .hero{
 height:650px;
-background:url('../images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover;
+background:#111;
 position:relative;
 display:flex;
 align-items:center;
+overflow:hidden;
+isolation:isolate;
+}
+
+.hero::before {
+content: "";
+position: absolute;
+inset: -8% -4%;
+background: linear-gradient(110deg, rgba(17,17,17,.72), rgba(17,17,17,.35)), url('../images/new-bmw-x5-debuts-5.jpg') center/cover no-repeat;
+animation: heroZoom 18s ease-in-out infinite alternate;
+transform: scale(1.08);
+z-index: -2;
+}
+
+.hero::after {
+content: "";
+position: absolute;
+inset: 0;
+background: rgba(17,17,17,.18);
+z-index: -1;
 }
 
 .overlay{
@@ -121,7 +141,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.55);
+background:rgba(0,0,0,.12);
 }
 
 .hero-content{
@@ -129,6 +149,7 @@ position:relative;
 display:flex;
 justify-content:space-between;
 align-items:center;
+z-index: 2;
 }
 
 .hero-text{
@@ -297,9 +318,30 @@ border-radius:5px;
 }
 
 .inventory-hero{
-    background: linear-gradient(135deg, rgba(17,17,17,0.95), rgba(17,17,17,0.75)),
-        url('../images/2022_ferrari_sf90-stradale_sf90_-5-97916.webp') center/cover no-repeat;
+    background: #111;
     padding: 90px 0 70px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.inventory-hero::before {
+    content: "";
+    position: absolute;
+    inset: -8% -4%;
+    background: linear-gradient(135deg, rgba(17,17,17,0.72), rgba(17,17,17,0.38)),
+        url('../images/Mercedes-Benz_GLE-450_Coupe.webp') center/cover no-repeat;
+    animation: heroZoom 18s ease-in-out infinite alternate;
+    transform: scale(1.08);
+    z-index: -2;
+}
+
+.inventory-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(17,17,17,0.18);
+    z-index: -1;
 }
 
 .inventory-hero-inner{
@@ -307,6 +349,8 @@ border-radius:5px;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-copy{
@@ -918,6 +962,28 @@ footer{
 
 }
 
+@media (max-width: 1024px) {
+    header .container {
+        gap: 16px;
+    }
+
+    .hero-content {
+        align-items: center;
+        flex-direction: column;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .cars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media(max-width:768px){
 
 .section-title{
@@ -935,11 +1001,6 @@ footer{
 .brand-logos img{
     width:70px;
 }
-
-}
-
-/* moblie */
-@media(max-width:768px){
 
 header .container{
     flex-direction:column;
